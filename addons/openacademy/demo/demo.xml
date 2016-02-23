@@ -1,16 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-        <record model="openacademy.Course" id="course0">
+        <record model="openacademy.course" id="course0">
             <field name="name">Course 0</field>
             <field name="description">Course 0's description
                 with multiple lines
             </field>
         </record>
-        <record model="openacademy.Course" id="course1">
+        <record model="openacademy.course" id="course1">
             <field name="name">Course 1</field>
             <!-- no desription for this one (required not set) -->
         </record>
-        <record ,odel="openacademy.Course" id="course2">
+        <record model="openacademy.course" id="course2">
             <field name="name">Course 2</field>
             <field name="description">Course 2's description</field>
         </record>
