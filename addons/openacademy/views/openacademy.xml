@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
+
+        <!-- Course Form View with tabs -->
+        <record model="ir.ui.view" id="course_form_view">
+            <field name="name">course.form</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <!-- notebook is a tab list where each page is a tab -->
+                        <notebook>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+                            <page string="About">
+                                <!-- static text are not editable (they donot have unique storage per record) -->
+                                This is an example notebooks
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Course Search VIew -->
+        <record model="ir.ui.view" id="course_search_view">
+            <field name="name">course.search</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
+
         <!-- action must be declared prior to corresponding menu item -->
         <!-- window action - action opening a view or a set of view -->
         <record model="ir.actions.act_window" id="course_list_action">
