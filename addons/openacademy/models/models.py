@@ -2,7 +2,7 @@
 
 from openerp import models, fields, api
 
-class openacademy(models.Model):
+class Course(models.Model):
     _name = 'openacademy.course'
 
 #   Special field
