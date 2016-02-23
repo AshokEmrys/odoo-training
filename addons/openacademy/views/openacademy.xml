@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-
+ <!-- Course Views -->
         <!-- Course Form View with tabs -->
         <record model="ir.ui.view" id="course_form_view">
             <field name="name">course.form</field>
@@ -39,6 +39,7 @@
             </field>
         </record>
 
+<!-- Course View Actions -->
         <!-- action must be declared prior to corresponding menu item -->
         <!-- window action - action opening a view or a set of view -->
         <record model="ir.actions.act_window" id="course_list_action">
@@ -51,6 +52,8 @@
             </field>
         </record>
 
+<!-- Course View Menu items-->
+
         <!-- top level menu, no parent -->
         <menuitem id="main_openacademy_menu" name="Open Adacemy"/>
 
@@ -60,6 +63,38 @@
             action="course_list_action"/>
         <!-- when refering action outside a module, fill id location needed 
             module_name.action_id -->
+
+ <!-- Session Views -->
+        <!-- Session form vieew -->
+        <record model="ir.ui.view" id="session_form_view">
+            <field name="name">session.form</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <form string="Session Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="start_date"/>
+                            <field name="duration"/>
+                            <field name="seats"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+<!-- Session View Actions -->
+        <record model="ir.actions.act_window" id="session_list_action">
+            <field name="name">Sessions</field>
+            <field name="res_model">openacademy.session</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!-- Session View Menu items -->
+       <menuitem id="session_menu" name="Sessions"
+            parent="openacademy_menu"
+            action="session_list_action"/>
     </data>
 </openerp>
 
