@@ -11,6 +11,7 @@
                     <sheet>
                         <group>
                             <field name="name"/>
+                            <field name="responsible_id"/>
                         </group>
                         <!-- notebook is a tab list where each page is a tab -->
                         <notebook>
@@ -36,6 +37,18 @@
                     <field name="name"/>
                     <field name="description"/>
                 </search>
+            </field>
+        </record>
+
+        <!-- course List View -->
+        <record model="ir.ui.view" id="course_list_view">
+            <field name="name">course.list</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                <tree string = "Course List">
+                    <field name="name"/>
+                    <field name="responsible_id"/>
+                </tree>
             </field>
         </record>
 
@@ -72,14 +85,30 @@
             <field name="arch" type="xml">
                 <form string="Session Form">
                     <sheet>
-                        <group>
+                        <group string="General">
+                            <field name="course_id"/>
                             <field name="name"/>
+                            <field name="instructor_id"/>
+                        </group>
+                        <group name="Schedule">
                             <field name="start_date"/>
                             <field name="duration"/>
                             <field name="seats"/>
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <!-- Session List View -->
+        <record model="ir.ui.view" id="session_list_view">
+            <field name="name">session.list</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <tree string="Session List">
+                    <field name="name"/>
+                    <field name="course_id"/>
+                </tree>
             </field>
         </record>
         
