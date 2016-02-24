@@ -18,9 +18,13 @@
                             <page string="Description">
                                 <field name="description"/>
                             </page>
-                            <page string="About">
-                                <!-- static text are not editable (they donot have unique storage per record) -->
-                                This is an example notebooks
+                            <page string="Sessions">
+                                <field name="session_ids">
+                                    <tree string="Registered Sessions">
+                                        <field name="name"/>
+                                        <field name="instructor_id"/>
+                                    </tree>
+                                </field>
                             </page>
                         </notebook>
                     </sheet>
