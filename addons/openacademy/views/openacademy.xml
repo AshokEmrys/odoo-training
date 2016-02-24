@@ -100,7 +100,12 @@
                             <field name="seats"/>
                         </group>
                         <label for="attendee_ids"/>
-                        <field name="attendee_ids"/>
+                        <field name="attendee_ids">
+                            <tree string="Attendee List">
+                                <field name="name"/>
+                                <field name="email"/>
+                            </tree>
+                        </field>
                     </sheet>
                 </form>
             </field>
