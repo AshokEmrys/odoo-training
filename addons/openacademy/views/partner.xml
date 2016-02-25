@@ -26,6 +26,7 @@
             <field name="name">Contacts</field>
             <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
+            <field name="domain">[('company_type', '=', 'person')]</field>
         </record>
 
         <record model="ir.actions.act_window" id="contact_cat_list_action">
