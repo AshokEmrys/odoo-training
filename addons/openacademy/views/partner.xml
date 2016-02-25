@@ -9,7 +9,8 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <notebook position="inside">
-                    <page string="Sessions">
+                    <page string="Sessions" 
+                        attrs="{'invisible':[('company_type', '!=', 'person')]}">
                         <group>
                             <field name="instructor"/>
                             <field name="instructor_session_ids" attrs="{'invisible':[('instructor', '=', False)]}"/>
